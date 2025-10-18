@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTech Academy - Gerenciamento de Alunos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center font-sans">
+
+  <header class="w-full bg-blue-600 text-white py-6 shadow-md mb-6">
+    <h1 class="text-3xl font-bold text-center">🏫 DevTech Academy</h1>
+    <p class="text-center text-sm mt-1">Sistema de Gerenciamento de Alunos</p>
+  </header>
+
+  <main class="w-full max-w-5xl bg-white shadow-md rounded-xl p-8">
+
+    <section id="form-section" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2 text-blue-700">Cadastro de Alunos</h2>
+
+      <form id="alunoForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="nome" class="font-medium">Nome:</label>
+          <input type="text" id="nome" required
+            class="w-full border border-gray-300 rounded-md p-2 mt-1 focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div>
+          <label for="idade" class="font-medium">Idade:</label>
+          <input type="number" id="idade" required
+            class="w-full border border-gray-300 rounded-md p-2 mt-1 focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div>
+          <label for="curso" class="font-medium">Curso:</label>
+          <select id="curso" required
+            class="w-full border border-gray-300 rounded-md p-2 mt-1 focus:ring-2 focus:ring-blue-400">
+            <option value="">Selecione...</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="notaFinal" class="font-medium">Nota Final:</label>
+          <input type="number" id="notaFinal" required
+            class="w-full border border-gray-300 rounded-md p-2 mt-1 focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div class="md:col-span-2 flex justify-end mt-4 space-x-3">
+          <button type="submit" id="btnCadastrar"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Cadastrar</button>
+
+          <button type="button" id="btnAtualizar"
+            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition hidden">Salvar Alterações</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="table-section" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2 text-blue-700">Lista de Alunos</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse border border-gray-300 text-sm text-center" id="tabelaAlunos">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="border border-gray-300 px-4 py-2">Nome</th>
+              <th class="border border-gray-300 px-4 py-2">Idade</th>
+              <th class="border border-gray-300 px-4 py-2">Curso</th>
+              <th class="border border-gray-300 px-4 py-2">Nota Final</th>
+              <th class="border border-gray-300 px-4 py-2">Aprovado?</th>
+              <th class="border border-gray-300 px-4 py-2">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="report-section">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2 text-blue-700">Relatórios</h2>
+
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button id="btnAprovados"
+          class="bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition">Aprovados</button>
+        <button id="btnMediaNotas"
+          class="bg-yellow-500 text-white px-3 py-2 rounded-lg hover:bg-yellow-600 transition">Média das Notas</button>
+        <button id="btnMediaIdades"
+          class="bg-orange-500 text-white px-3 py-2 rounded-lg hover:bg-orange-600 transition">Média das Idades</button>
+        <button id="btnOrdemAlfabetica"
+          class="bg-indigo-600 text-white px-3 py-2 rounded-lg hover:bg-indigo-700 transition">Ordem Alfabética</button>
+        <button id="btnPorCurso"
+          class="bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition">Por Curso</button>
+      </div>
+
+      <div id="relatorioResultado" class="bg-gray-100 rounded-md p-4 text-sm text-gray-700"></div>
+    </section>
+  </main>
+
+  <footer class="text-center text-xs text-gray-500 py-4 mt-6">
+    © 2025 DevTech Academy. Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
