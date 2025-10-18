@@ -5,10 +5,10 @@ Sistema simples de **cadastro, edição, exclusão e relatórios** de alunos, fe
 ---
 Funcionalidades
 
-- ✅ Cadastrar, editar e excluir alunos
-- 📋 Exibir lista dinâmica de alunos em tabela
-- 💾 Armazenamento local via `localStorage`
-- 📊 Relatórios automáticos:
+-  Cadastrar, editar e excluir alunos
+-  Exibir lista dinâmica de alunos em tabela
+-  Armazenamento local via `localStorage`
+-  Relatórios automáticos:
   - Alunos aprovados (nota ≥ 7)
   - Média das notas
   - Média das idades
